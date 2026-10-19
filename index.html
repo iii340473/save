@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CHEN YU KAI｜自我介紹</title>
+
+  <style>
+    /* =========================
+       1. 基本設定
+    ========================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #f2f2f2;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       2. 共用設定
+    ========================== */
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+      border-bottom: 1px solid #242424;
+    }
+
+    .eyebrow {
+      color: #707070;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      margin-bottom: 28px;
+    }
+
+    .section-text {
+      color: #aaa;
+      max-width: 680px;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 22px;
+      border: 1px solid #525252;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #f2f2f2;
+      color: #090909;
+      border-color: #f2f2f2;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 11px;
+      border: 1px solid #343434;
+      color: #8e8e8e;
+      font-size: 11px;
+      margin: 8px 6px 0 0;
+    }
+
+    /* =========================
+       3. 導覽列
+    ========================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 9, 9, 0.95);
+      border-bottom: 1px solid #242424;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 0.22em;
+    }
+
+    .logo span {
+      color: #666;
+      font-size: 11px;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+    }
+
+    nav a {
+      color: #858585;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* =========================
+       4. 首頁
+    ========================== */
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 9.5vw, 128px);
+      line-height: 0.84;
+      letter-spacing: -0.055em;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-image {
+      height: 560px;
+      border: 1px solid #292929;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* =========================
+       5. 關於我
+    ========================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 54px;
+      align-items: stretch;
+    }
+
+    .profile-image {
+      min-height: 500px;
+      border: 1px solid #292929;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .profile-list {
+      margin-top: 38px;
+      border-top: 1px solid #292929;
+    }
+
+    .profile-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .profile-row span:first-child {
+      color: #626262;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+    }
+
+    .profile-row span:last-child {
+      color: #c7c7c7;
+      font-size: 14px;
+    }
+
+    /* =========================
+       6. 經歷 / 能力
+    ========================== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 46px;
+    }
+
+    .card {
+      border: 1px solid #292929;
+      background: #101010;
+      padding: 28px;
+    }
+
+    .card-number {
+      color: #555;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #858585;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       7. 聯絡方式
+    ========================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .contact-list {
+      border-top: 1px solid #292929;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .contact-row span:first-child {
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+    }
+
+    .contact-row a:hover {
+      color: #aaa;
+    }
+
+    /* =========================
+       8. Footer
+    ========================== */
+    footer {
+      padding: 28px 0;
+      color: #555;
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       9. 響應式設計
+    ========================== */
+
+    /* 平板 */
+    @media (max-width: 1024px) {
+      .container {
+        width: min(920px, 90%);
+      }
+
+      .hero {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 36px;
+      }
+
+      .hero h1 {
+        font-size: clamp(56px, 9vw, 96px);
+      }
+
+      .hero-image {
+        height: 500px;
+      }
+
+      .about-grid {
+        gap: 36px;
+      }
+
+      .cards {
+        gap: 14px;
+      }
+
+      nav {
+        gap: 18px;
+      }
+    }
+
+    /* 手機與小型平板 */
+    @media (max-width: 768px) {
+      header {
+        position: static;
+      }
+
+      .nav {
+        min-height: auto;
+        padding: 18px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 14px;
+      }
+
+      nav a {
+        padding: 8px 0;
+        font-size: 12px;
+        border-bottom: 1px solid #1f1f1f;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding: 64px 0 78px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 16vw, 84px);
+      }
+
+      .hero p,
+      .section-text {
+        font-size: 15px;
+      }
+
+      .hero-image {
+        height: 430px;
+      }
+
+      .hero-meta {
+        gap: 14px 22px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .profile-image {
+        min-height: 420px;
+      }
+
+      .profile-image img {
+        min-height: 420px;
+      }
+
+      .profile-row {
+        grid-template-columns: 110px 1fr;
+        gap: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        align-items: start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    /* 小手機 */
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-size: clamp(42px, 14vw, 62px);
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 17vw, 70px);
+      }
+
+      .hero-image {
+        height: 360px;
+      }
+
+      .profile-image,
+      .profile-image img {
+        min-height: 360px;
+      }
+
+      .profile-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!--
+    圖片替換方式：
+    將自己的圖片放進 images 資料夾，
+    使用相同檔名覆蓋即可，不需要修改 HTML。
+
+    hero.jpg       首頁主視覺
+    profile.jpg    個人照片
+  -->
+
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+        CHEN YU KAI <span>/ INTRODUCTION</span>
+      </a>
+
+      <nav>
+        <a href="#home">首頁</a>
+        <a href="#about">關於我</a>
+        <a href="#experience">經歷與能力</a>
+        <a href="#contact">聯絡方式</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- 首頁 -->
+  <section id="home">
+    <div class="container hero">
+
+      <div>
+        <div class="eyebrow">Personal Introduction / 2026</div>
+
+        <h1>
+          THIS IS<br>
+          WHO I AM.
+        </h1>
+
+        <p>
+          從事保養品產業5年時間，執行專案企劃、推廣活動
+          擅長將事情規劃清楚，然後並且逐步推動完成。
+          我喜歡旅行、電影、動漫，也正在持續學習 AI、行銷與設計。
+        </p>
+
+        <a href="#about" class="button">認識我 →</a>
+
+        <div class="hero-meta">
+          <span>INTJ</span>
+          <span>PLANNING / DESIGN / AI</span>
+          <span>TAIWAN</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="./IMG/鋼筆工具+遮色片.png" alt="首頁個人主視覺">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 關於我 -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+
+      <div class="profile-image">
+        <img src="./IMG/GIF練習.gif" alt="個人照片">
+      </div>
+
+      <div>
+        <div class="eyebrow">About Me</div>
+
+        <h2 class="section-title">
+          A LITTLE<br>
+          ABOUT ME.
+        </h2>
+
+        <p class="section-text">
+          我喜歡有方向感的生活，但也不是一個永遠把行程塞滿的人。
+          沒有明確目標時，我可以很享受悠閒與放空；
+          但當我決定要完成某件事，就會開始整理資訊、拆解步驟，
+          並把它做到一個自己滿意的程度。
+        </p>
+
+        <div class="profile-list">
+
+          <div class="profile-row">
+            <span>PERSONALITY</span>
+            <span>INTJ / 偏好思考與規劃，將專案照計畫推動執行</span>
+          </div>
+
+          <div class="profile-row">
+            <span>EXPERIENCE</span>
+            <span>化妝品產業 / 專案規劃</span>
+          </div>
+
+          <div class="profile-row">
+            <span>FOCUS</span>
+            <span>AI 工具、行銷、設計與內容企劃</span>
+          </div>
+
+          <div class="profile-row">
+            <span>WORK STYLE</span>
+            <span>不可能事事完美，但一定要事事完整</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 經歷與能力 -->
+  <section id="experience" class="section">
+    <div class="container">
+
+      <div class="eyebrow">Experience & Skills</div>
+
+      <h2 class="section-title">
+        WHAT I<br>
+        CAN DO.
+      </h2>
+
+      <p class="section-text">
+        過去的工作經驗讓我接觸到產品、企劃、內容與執行流程，
+        現在則逐漸把 AI 與設計工具整合進自己的工作方式。
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-number">01 / PLANNING</div>
+          <h3>專案規劃</h3>
+          <p>
+            喜歡先建立方向、整理資訊、拆解任務，
+            再依照優先順序推進。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02 / MARKETING</div>
+          <h3>行銷內容</h3>
+          <p>
+            接觸社群內容、廣告素材、文案與消費者溝通方式。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03 / DESIGN</div>
+          <h3>視覺設計</h3>
+          <p>
+            持續練習簡報、社群素材、品牌視覺與基礎網頁排版。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">04 / AI TOOLS</div>
+          <h3>AI 工具應用</h3>
+          <p>
+            學習把生成式 AI 應用在影像、短影音、企劃與工作流程中。
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- 聯絡方式 -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+
+      <div>
+        <div class="eyebrow">Contact</div>
+
+        <h2 class="section-title">
+          GET IN<br>
+          TOUCH.
+        </h2>
+
+        <p class="section-text">
+          如果想交流或其他有趣的合作，可以從以下方式找到我。
+        </p>
+      </div>
+
+      <div class="contact-list">
+
+        <div class="contact-row">
+          <span>EMAIL</span>
+          <a href="mailto:iii340473@gmail.com">
+            iii340473@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span>INSTAGRAM</span>
+          <a href="#yu_kai1998">
+            @yu_kai1998
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span>PHONE</span>
+          <a href="#">
+            0903636349
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span>PERSONAL INTRODUCTION</span>
+      <span>© 2026 YOUR NAME</span>
+    </div>
+  </footer>
+
+</body>
+</html>
